@@ -28,7 +28,7 @@ Todo List with SPFx is a Todo List Manage tool for a group of people. This app i
     > In case you want to create a List in subsite of the team site, you will need manual steps to change the site url in *[./SPFx/src/webparts/todoList/components/SharePointListManager.ts](./SPFx/src/webparts/todoList/components/SharePointListManager.ts).*
     - Name the List 'To Do List'
     - Click `Add Column`, select `Single line of text`, name the column 'description'
-    - Click `Add Column`, select `Yes/No`, name the column 'isCompleted'
+    - Click `Add Column`, select `Yes/No`, name the column 'isCompleted', and set the default value to `No`.
 * [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit)
 * [Optional] If you want your users see only the items created by themselves, add access control to your List.
     - In List Page, click `setting` button and then choose `list setting`.
@@ -97,7 +97,7 @@ Debug the app with SharePoint WorkBench in VSCode.
 ## Known Issue:
 1. Importing [msteams-ui-components-react](https://www.npmjs.com/package/msteams-ui-components-react) package will cause issues during package build:
 ![Issue](images/knownissue.png)
-2. When using the TodoList app, switching Teams accounts <b>in the same browser</b> may cause errors(the app still uses the previous account instead of the current one). This is because switching in Teams web doesn't log people out of the other M365 endpoints(SharePoint). To avoid this, we suggest you to open a new browser or switch your profile in the browser settings instead of simply switching in the website.
+2. When you want to switch accounts to test the app, and if you are using edge browser with profile mode instead of guest mode, we suggest you to switch accounts by switching  profiles in the browser. This is because if you simply log out in Teams site, SharePoint site will still use the profile account. Thus the accounts for these two sites may be not consistent and will cause error.
 3. In provision stage, you may encounter error "[AppStudio.RemoteAppIdCreatedFailed]:Failed to create teams app id in app studio, due to 409". This is because the teams app id(which is the provision resource) has been already created in your tenant.(It may be created by other users/accounts in your tenant). To solve this, you can update the id(both in line 5 and line 27) in your [manifest file](./appPackage/manifest.source.json).
 ![Manifest Line 5](images/manifest1.png)
 ![Manifest Line 27](images/manifest2.png)
