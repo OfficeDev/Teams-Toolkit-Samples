@@ -1,0 +1,12 @@
+appPackage
+assets
+build
+env
+infra
+node_modules
+.gitignore
+aad.manifest.json
+*.md
+compose*.yaml
+Dockerfile
+teamsapp*.yml

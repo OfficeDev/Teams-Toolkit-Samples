@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: $DOCKER_REGISTRY/hello-world-tab-frontend
+    container_name: hello-world-tab-frontend
+    environment:
+      - "REACT_APP_CLIENT_ID=6427811e-d1a1-4ff9-834f-e99d10e551b3"
+      - "REACT_APP_START_LOGIN_PAGE_URL=https://helloworld650f48.proudcliff-bba63f36.centralus.azurecontainerapps.io/auth-start.html"
+      - "REACT_APP_FUNC_NAME=getUserProfile"
+      - "REACT_APP_FUNC_ENDPOINT=https://zhijieapi.internal.proudcliff-bba63f36.centralus.azurecontainerapps.io"
+      - "PORT=80"
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    image: $DOCKER_REGISTRY/hello-world-tab-api
+    container_name: hello-world-tab-api

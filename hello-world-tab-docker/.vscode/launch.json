@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Remote in Teams (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "https://teams.microsoft.com/l/app/${{TEAMS_APP_ID}}?installAppPackage=true&webjoin=true&${account-hint}",
+      "presentation": {
+        "group": "group 1: Teams",
+        "order": 3
+      },
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Launch Remote in Teams (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://teams.microsoft.com/l/app/${{TEAMS_APP_ID}}?installAppPackage=true&webjoin=true&${account-hint}",
+      "presentation": {
+        "group": "group 1: Teams",
+        "order": 3
+      },
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Attach to Frontend in Teams (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "https://teams.microsoft.com/l/app/${{local:TEAMS_APP_ID}}?installAppPackage=true&webjoin=true&${account-hint}",
+      "presentation": {
+        "group": "all",
+        "hidden": true
+      },
+      "postDebugTask": "Stop Teams App in Docker",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Attach to Frontend in Teams (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://teams.microsoft.com/l/app/${{local:TEAMS_APP_ID}}?installAppPackage=true&webjoin=true&${account-hint}",
+      "presentation": {
+        "group": "all",
+        "hidden": true
+      },
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug in Teams (Edge)",
+      "configurations": ["Attach to Frontend in Teams (Edge)"],
+      "preLaunchTask": "Start Teams App in Docker",
+      "presentation": {
+        "group": "group 1: Teams",
+        "order": 1
+      },
+      "stopAll": true
+    },
+    {
+      "name": "Debug in Teams (Chrome)",
+      "configurations": ["Attach to Frontend in Teams (Chrome)"],
+      "preLaunchTask": "Start Teams App in Docker",
+      "presentation": {
+        "group": "group 1: Teams",
+        "order": 2
+      },
+      "stopAll": true
+    }
+  ]
+}

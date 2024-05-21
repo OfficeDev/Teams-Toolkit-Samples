@@ -1,0 +1,65 @@
+[
+  {
+    "name": "officedev-teamsfx-samples-tab-hello-world-tab-with-backend",
+    "source": "officeDev",
+    "title": "Tab App with Azure Backend",
+    "shortDescription": "A Hello World app of Microsoft Teams Tab app which has a backend service.",
+    "url": "https://github.com/OfficeDev/TeamsFx-Samples/tree/dev/hello-world-tab-with-backend",
+    "longDescription": [
+      "This is a Hello World app of Microsoft Teams Tab app which accomplishes very simple function like single-sign on. You can run this app locally or deploy it to Microsoft Azure. This app has a Tab frontend and a backend service using Azure Function."
+    ],
+    "creationDateTime": "2021-11-30",
+    "updateDateTime": "2023-10-24",
+    "products": [
+      "Teams",
+      "TeamsToolkit"
+    ],
+    "metadata": [
+      {
+        "key": "TEAMS-SAMPLE-SOURCE",
+        "value": "OfficeDev"
+      },
+      {
+        "key": "TEAMS-SERVER-LANGUAGE",
+        "value": "typescript"
+      },
+      {
+        "key": "TEAMS-FEATURES",
+        "value": "tab"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/OfficeDev/TeamsFx-Samples/dev/hello-world-tab-with-backend/assets/thumbnail.png",
+        "alt": "Tab App with Azure Backend"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "hund030",
+        "pictureUrl": "https://avatars.githubusercontent.com/u/26134943?v=4",
+        "name": "Zhijie Huang"
+      }
+    ],
+    "references": [  
+    {
+        "name": "Teams developer documentation",
+        "url": "https://aka.ms/TeamsPlatformDocs"
+      },
+      {
+        "name": "Teams developer questions",
+        "url": "https://aka.ms/TeamsPlatformFeedback"
+      },
+      {
+        "name": "Teams development videos from Microsoft",
+        "url": "https://aka.ms/sample-ref-teams-vids-from-microsoft"
+      },
+      {
+        "name": "Teams development videos from the community",
+        "url": "https://aka.ms/sample-ref-teams-vids-from-community"
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - 53000:53000
+    volumes:
+      - ./src:/app/src
+      - ~/.fx/certificate:/app/.fx/certificate
+    env_file:
+      - .localConfigs
+    environment:
+      - SSL_CRT_FILE=/app/.fx/certificate/localhost.crt
+      - SSL_KEY_FILE=/app/.fx/certificate/localhost.key
+      - REACT_APP_FUNC_ENDPOINT=http://localhost:7071
+      - WATCHPACK_POLLING=true
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 7071:80
+    volumes:
+      - ./api:/home/site/wwwroot
+      - /home/site/wwwroot/node_modules
+      - /home/site/wwwroot/bin
+      - /home/site/wwwroot/dist
+    env_file:
+      - api/.localConfigs
+    environment:
+      - CORS_ALLOWED_ORIGINS=["https://localhost:53000"]
+      - CORS_SUPPORT_CREDENTIALS=true
+      - CONTAINER_NAME=teamsfx-localhost # Enable CORS, but has issue
+      # - FUNCTIONS_ENABLE_CORS_CONFIGURATION=true # Enable CORS, requires azure-functions-host 4.31.0 or later
