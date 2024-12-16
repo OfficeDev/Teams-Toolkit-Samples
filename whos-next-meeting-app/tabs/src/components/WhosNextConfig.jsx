@@ -8,7 +8,8 @@ class WhosNextConfig extends React.Component {
     app.initialize().then(async () => {
       //  When the user clicks "Save", save the updated configuration
       pages.config.registerOnSaveHandler(async (saveEvent) => {
-        const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
+        const port = window.location.port ? `:${window.location.port}` : '';
+        const baseUrl = `https://${window.location.hostname}${port}`;
         await pages.config.setConfig({
           suggestedDisplayName: "Who's next?",
           entityId: "WhosNext",

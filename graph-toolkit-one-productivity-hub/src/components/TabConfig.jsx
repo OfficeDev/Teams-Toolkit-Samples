@@ -18,7 +18,8 @@ class TabConfig extends React.Component {
        * the settings selected by the user.
        */
       pages.config.registerOnSaveHandler((saveEvent) => {
-        const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
+        const port = window.location.port ? `:${window.location.port}` : '';
+        const baseUrl = `https://${window.location.hostname}${port}`;
         pages.config
           .setConfig({
             suggestedDisplayName: "My Tab",
