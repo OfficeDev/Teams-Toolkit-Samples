@@ -21,7 +21,7 @@ This intelligent Microsoft Teams Tab app is powered by Azure OpenAI, which helps
 
 ## This sample illustrates
 
-- How to use Azure Open AI to generate data visualization based on verbal descriptions.
+- How to use Azure OpenAI to generate data visualization based on verbal descriptions.
 - How to display the generated data visualization in Teams tab.
 - How to query data from Azure SQL database.
 - How to use TeamsFx to build backend hosting on Azure for your tab app.
@@ -70,7 +70,7 @@ Deploy your project to Azure by following these steps:
 
 1. Open Teams Toolkit in Visual Studio Code, and sign in your Azure account by clicking the `Sign in to Azure` in the `ACCOUNTS` section from sidebar.
 2. After you signed in, select a subscription under your account. The Teams Toolkit will use this subscription to provision Azure resources to host you app.
-3. Update the `.env.dev.user` file to add your Azure Open AI and Azure SQL configurations.
+3. Update the `.env.dev.user` file to add your Azure OpenAI and Azure SQL configurations.
 4. Open the Teams Toolkit and click `Provision` in the `LIFECYCLE` section. Alternatively open the command palette(Ctrl+Shift+P) and type: `Teams: Provision` command.
 5. Open the Teams Toolkit and click `Deploy` in the `LIFECYCLE` section. Alternatively open the command palette(Ctrl+Shift+P) and type: `Teams: Deploy` command.
 
