@@ -12,7 +12,10 @@
     "updateDateTime": "2023-10-26",
     "products": [
       "Teams",
-      "TeamsToolkit"
+      "TeamsToolkit",
+      "Microsoft Graph connectors",
+      "Microsoft Graph",
+      "Microsoft 365 Copilot"
     ],
     "metadata": [
       {
