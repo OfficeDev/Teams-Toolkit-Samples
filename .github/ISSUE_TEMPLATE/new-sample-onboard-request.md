@@ -6,6 +6,7 @@ labels: ''
 assignees: summzhan
 
 ---
+> Before you start to submit your sample, spend 5 mins to understand to sample onboard process. [Read the Contributing Guidance](https://github.com/OfficeDev/TeamsFx-Samples/blob/dev/assets/Contributing_process.png)
 
 **Owner:**
 Name and email address/GitHub account of maintainers. We will send email or @you in issues when there's any maintenance work to do in the future.
