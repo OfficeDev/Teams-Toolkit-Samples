@@ -1,0 +1,56 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.17",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "echo-bot-msi${{APP_NAME_SUFFIX}}",
+        "full": "full name for default-bot-js"
+    },
+    "description": {
+        "short": "short description for default-bot-js",
+        "full": "full description for default-bot-js"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "${{BOT_ID}}",
+            "scopes": [
+                "personal",
+                "team",
+                "groupChat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                  "scopes": ["personal", "team", "groupChat"],
+                  "commands": [
+                      {
+                          "title": "Hi",
+                          "description": "Say hi to the bot."
+                      }
+                  ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
